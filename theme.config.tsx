@@ -28,7 +28,7 @@ const config: DocsThemeConfig = {
 	footer: {
 		text: (
 			<>
-				&copy; 2024 Tomáš Wróbel. Under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.
+				&copy; 2024 Tomáš Wróbel. Under the&nbsp;<a href="https://opensource.org/licenses/MIT">MIT License</a>.
 			</>
 		)
 	}
