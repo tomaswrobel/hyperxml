@@ -13,7 +13,9 @@ seamlessly integrate with existing web technologies, HyperXML provides additiona
 2. **XML Syntax**: HyperXML files use the `.xml` extension and adhere to XML syntax rules.
 3. **Enhanced Capabilities**:
     - **Head Attribute for Title**: Simplifies title declaration by allowing it as an attribute within the `<head>{:html}` tag.
-    - **Reusable Definitions**: Define reusable components with `<definition name="...">{:html}`, and include them using `<include definition="..." />{:xml}`.
+    - **Reusable Definitions**: 
+        - Define reusable components with the `<definition>{:html}` tag.
+        - Include these components with customizable parameters using the `<include>{:html}` tag.
     - **Self-Closing Tags**: Shorten empty elements using self-closing tags (e.g., `<div />{:xml}` instead of `<div></div>{:html}`).
     - **External Stylesheets**: Use `<style src="..." />{:xml}` to include CSS stylesheets in both the `<head>{:html}` and `<body>{:html}`.
 
@@ -52,7 +54,7 @@ Here is a complete example of a HyperXML document:
 ```
 
 <Callout type="info">
-    We use `<?xml-stylesheet href="https://hyperxml.vercel.app/v1.xsl" type="text/xsl"?>{?:xml}` to include the XSLT 
+    We use `<?xml-stylesheet href="https://hyperxml.vercel.app/v1.xsl" type="text/xsl"?>{:xml}` to include the XSLT 
     stylesheet for transforming HyperXML into HTML. This is natively supported by all browsers. If you do not want 
     to use Just-in-Time (JIT) compilation, you can precompile your HyperXML files [here](/compile).
 </Callout>
@@ -65,6 +67,6 @@ In this example:
 - The header is included twice: once with a custom title and once with the default title.
 - An additional stylesheet is included within the `<body>{:html}`.
 
-<hr />
+---
 
 By leveraging HyperXML, developers can write cleaner, more maintainable code while enjoying the benefits of both XML and HTML.
