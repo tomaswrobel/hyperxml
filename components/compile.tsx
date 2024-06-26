@@ -1,4 +1,4 @@
-import {useMemo, useState, type FunctionComponent, type ReactNode} from 'react';
+import {useMemo, useState, type FunctionComponent} from 'react';
 import Example from '../public/example.xml?type=raw';
 import HyperXML from '../public/v1.xsl?type=raw';
 import {Tabs} from "nextra/components";
@@ -15,7 +15,7 @@ function editor(code: string) {
     return highlight.highlight(code, {language: "xml", ignoreIllegals: true}).value;
 }
 
-const Compile = () => {
+const Compile: FunctionComponent = () => {
     const [xml, setXml] = useState(Example);
 
     const html = useMemo(async function () {

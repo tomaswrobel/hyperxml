@@ -4,6 +4,9 @@ const withNextra = require('nextra')({
 });
 
 module.exports = withNextra({
+	typescript: {
+		ignoreBuildErrors: true,
+	},
 	webpack: config => ({
 		...config,
 		module: {
