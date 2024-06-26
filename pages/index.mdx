@@ -1,13 +1,11 @@
 import {Callout} from "nextra/components";
 
-# HyperXML Documentation
-
-## Introduction
+# Introduction
 
 **HyperXML** is a versatile markup language that combines the structure of XML with the familiarity of HTML. Designed to 
 seamlessly integrate with existing web technologies, HyperXML provides additional features and conveniences for developers.
 
-### Key Features
+## Key Features
 
 1. **HTML Compatibility**: HyperXML uses and translates directly into HTML, ensuring compatibility with all browsers.
 2. **XML Syntax**: HyperXML files use the `.xml` extension and adhere to XML syntax rules.
@@ -18,8 +16,9 @@ seamlessly integrate with existing web technologies, HyperXML provides additiona
         - Include these components with customizable parameters using the `<include>{:html}` tag.
     - **Self-Closing Tags**: Shorten empty elements using self-closing tags (e.g., `<div />{:xml}` instead of `<div></div>{:html}`).
     - **External Stylesheets**: Use `<style src="..." />{:xml}` to include CSS stylesheets in both the `<head>{:html}` and `<body>{:html}`.
+4. **XSLT 1.0**: First XSLT version ensures compatibility with all browsers and provides a simple transformation process. 
 
-### Example
+## Example
 
 Here is a complete example of a HyperXML document:
 
@@ -53,10 +52,12 @@ Here is a complete example of a HyperXML document:
 </hyperxml>
 ```
 
-<Callout type="info">
-    We use `<?xml-stylesheet href="https://hyperxml.vercel.app/v1.xsl" type="text/xsl"?>{:xml}` to include the XSLT 
-    stylesheet for transforming HyperXML into HTML. This is natively supported by all browsers. If you do not want 
-    to use Just-in-Time (JIT) compilation, you can precompile your HyperXML files [here](/compile).
+<Callout type="warning">
+    We use `<?xml-stylesheet href="https://hyperxml.vercel.app/v1.xsl" type="text/xsl"?>{:xml}` to 
+    include the XSLT  stylesheet for transforming HyperXML into HTML. This is natively supported by 
+    all browsers but some may break due to security policies. You can either download 
+    <a href="/v1.xsl" download="hyperxml.xsl">the file</a> 
+    and use it locally or [compile](/compile) your HyperXML files.  
 </Callout>
 
 In this example:

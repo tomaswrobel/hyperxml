@@ -44,23 +44,21 @@ const Compile: FunctionComponent = () => {
     }, [xml]);
 
     return (
-        <>
-            <Tabs items={['HyperXML', 'HTML', 'Result']}>
-                <Tabs.Tab>
-                    <Editor highlight={editor} onValueChange={setXml} value={xml} tabSize={4} padding={10} />
-                </Tabs.Tab>
-                <Tabs.Tab>
-                    <Lazy promise={html}>
-                        {html => html && <Editor highlight={editor} value={html} readOnly padding={10} />}
-                    </Lazy>
-                </Tabs.Tab>
-                <Tabs.Tab>
-                    <Lazy promise={html}>
-                        {html => html && <iframe srcDoc={html} style={{height: '320px', width: '100%', border: 0}} />}
-                    </Lazy>
-                </Tabs.Tab>
-            </Tabs>
-        </>
+        <Tabs items={['HyperXML', 'HTML', 'Result']}>
+            <Tabs.Tab>
+                <Editor highlight={editor} onValueChange={setXml} value={xml} tabSize={4} padding={10} />
+            </Tabs.Tab>
+            <Tabs.Tab>
+                <Lazy promise={html}>
+                    {html => html && <Editor highlight={editor} value={html} readOnly padding={10} />}
+                </Lazy>
+            </Tabs.Tab>
+            <Tabs.Tab>
+                <Lazy promise={html}>
+                    {html => html && <iframe srcDoc={html} style={{height: '320px', width: '100%', border: 0}} />}
+                </Lazy>
+            </Tabs.Tab>
+        </Tabs>
     );
 };
 
