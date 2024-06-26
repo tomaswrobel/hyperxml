@@ -1,0 +1,104 @@
+# Title Attribute
+
+In HyperXML, the `<head>{:html}` tag can include a `title` attribute to set the document's title. This offers
+a convenient way to define the page title without requiring a separate `<title>{:html}` element. If the `title`
+attribute is not set, HyperXML will look for a `<title>{:html}` element within the `<head>{:html}`. If neither
+is provided, the title will default to "Untitled".
+
+## Priority of Title Setting
+
+1. `title` Attribute in `<head>{:html}` This has the highest priority.
+2. `<title>{:html}` Element: Used if the `title` attribute is not set.
+3. Default Title: "Untitled" is used if neither the `title` attribute nor the `<title>{:html}` element is present.
+
+## Using the `title` Attribute in `<head>{:html}`
+
+In this example, the `title` attribute is used to set the document's title.
+
+```xml filename="hyperxml" copy
+<!DOCTYPE hyperxml>
+<?xml-stylesheet href="https://hyperxml.vercel.app/v1.xsl" type="text/xsl"?>
+<hyperxml>
+    <head title="My Custom Title" />
+    <body>
+        <h1>Welcome</h1>
+        <p>This document uses the title attribute in the head tag.</p>
+    </body>
+</hyperxml>
+```
+
+The document's title is set to "My Custom Title" using the `title` attribute in the `<head>{:html}` tag.
+
+## Using the `<title>{:html}` Element
+
+If the `title` attribute is not set, HyperXML will use the `<title>{:html}` element within the `<head>{:html}` tag.
+
+```xml filename="hyperxml" copy
+<!DOCTYPE hyperxml>
+<?xml-stylesheet href="https://hyperxml.vercel.app/v1.xsl" type="text/xsl"?>
+<hyperxml>
+    <head>
+        <title>My Custom Title</title>
+    </head>
+    <body>
+        <h1>Welcome</h1>
+        <p>This document uses the title element in the head tag.</p>
+    </body>
+</hyperxml>
+```
+
+The document's title is set to "My Custom Title" using the `<title>{:html}` element within the `<head>{:html}` tag.
+
+## Default Title
+
+If neither the `title` attribute nor the `<title>{:html}` element is provided, the document's title will default to "Untitled".
+
+```xml filename="hyperxml" copy
+<!DOCTYPE hyperxml>
+<?xml-stylesheet href="https://hyperxml.vercel.app/v1.xsl" type="text/xsl"?>
+<hyperxml>
+    <head />
+    <body>
+        <h1>Welcome</h1>
+        <p>This document uses the default title as no title is specified.</p>
+    </body>
+</hyperxml>
+```
+
+The document's title defaults to "Untitled" because neither the `title` attribute nor the `<title>{:html}` element is set.
+
+## Using Both `title` Attribute and `<title>{:html}` Element
+
+If both the `title` attribute and the `<title>{:html}` element are present, the `title` attribute takes precedence.
+
+```xml filename="hyperxml" copy
+<!DOCTYPE hyperxml>
+<?xml-stylesheet href="https://hyperxml.vercel.app/v1.xsl" type="text/xsl"?>
+<hyperxml>
+    <head title="Title from Attribute">
+        <title>Title from Element</title>
+    </head>
+    <body>
+        <h1>Welcome</h1>
+        <p>This document uses the title attribute in the head tag, which overrides the title element.</p>
+    </body>
+</hyperxml>
+```
+
+The document's title is set to "Title from Attribute" because the `title` attribute takes precedence over the `<title>{:html}` element.
+
+## Non-empty `<head>{:html}` Tag with `title` Attribute
+
+```xml filename="hyperxml" copy
+<!DOCTYPE hyperxml>
+<?xml-stylesheet href="https://hyperxml.vercel.app/v1.xsl" type="text/xsl"?>
+<hyperxml>
+    <head title="Empty Head with Title">
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <h1>Welcome</h1>
+        <p>This document uses the title attribute in an otherwise empty head tag.</p>
+    </body>
+</hyperxml>
+```

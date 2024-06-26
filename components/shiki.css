@@ -1,0 +1,32 @@
+/* Converts shiki theme to highlight.js theme */
+
+.light .hljs {
+    background-color: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 39% / 0.05);
+}
+
+.dark .hljs {
+    background-color: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 77% / 0.1);
+}
+
+.hljs,
+.hljs-subst {
+    color: var(--shiki-color-text);
+}
+
+.hljs-attr,
+.hljs-attribute {
+    color: var(--shiki-token-function);
+}
+
+.hljs-name,
+.hljs-string {
+    color: var(--shiki-token-string-expression);
+}
+
+.hljs-keyword {
+    color: var(--shiki-token-keyword);
+}
+
+:focus {
+    outline: none !important;
+}

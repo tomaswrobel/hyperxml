@@ -1,0 +1,39 @@
+
+# `<parameter>{:html}` tag
+
+The `<parameter>{:html}` tag is used within `<definition>{:html}` tags to create 
+dynamic content that can be customized when the definition is included.
+
+```xml filename="hyperxml" copy
+<parameter name="paramName">Default Content</parameter>
+<!-- Of course can be empty -->
+<parameter name="paramName" />
+<!-- or with HTML content -->
+<parameter name="paramName">
+    <strong>Custom Content</strong>
+</parameter>
+```
+
+## Parameter in Definition
+
+```xml filename="hyperxml" copy
+<definition name="header">
+    <div class="header">
+        <h1><parameter name="title">Default Title</parameter></h1>
+    </div>
+</definition>
+```
+
+This defines a "header" component with a parameter named "title". The `<parameter>{:html}` tag provides a default 
+value "Default Title" that will be used if no custom value is provided when the component is included.
+
+## Include with Parameter
+
+```xml filename="hyperxml" copy
+<include definition="header">
+    <parameter name="title">Custom Title</parameter>
+</include>
+```
+
+This includes the "header" component, overriding the default "title" parameter with the 
+custom value "Custom Title". As a result, the `<h1>{:html}` tag will display "Custom Title".

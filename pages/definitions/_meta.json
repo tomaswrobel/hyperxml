@@ -1,0 +1,6 @@
+{
+    "index": "Introduction",
+    "definition": "<definition> tag",
+    "include": "<include> tag",
+    "parameter": "<parameter> tag"
+}

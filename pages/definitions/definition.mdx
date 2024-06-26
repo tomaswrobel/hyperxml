@@ -1,0 +1,45 @@
+import {Callout} from "nextra/components";
+
+# `<definition>{:html}` tag
+
+The `<definition>{:html}` tag is used to define reusable components in HyperXML. These components can 
+be included multiple times throughout your document, ensuring consistent structure and content.
+
+```xml filename="hyperxml" copy
+<definition name="componentName">
+    <!-- Content goes here -->
+</definition>
+```
+
+<Callout type="info">
+    You can place definitions anywhere in your HyperXML document.
+    The location does not matter, the name does. If more than
+    one definition has the same name, they will be merged
+    in the order they appear.
+</Callout>
+
+## Simple Definition
+
+```xml filename="hyperxml" copy
+<definition name="header">
+    <div class="header">
+        <h1>Welcome to My Website</h1>
+    </div>
+</definition>
+```
+
+This defines a reusable component named "header". The content of this component is a `<div>{:html}`
+with the class "header" containing an `<h1>{:html}` tag with the text "Welcome to My Website".
+
+## Definition with Parameters
+
+```xml filename="hyperxml" copy
+<definition name="header">
+    <div class="header">
+        <h1><parameter name="title">Default Title</parameter></h1>
+    </div>
+</definition>
+```
+
+This defines a "header" component with a parameter named "title". The `parameter` tag provides a default 
+value "Default Title" that will be used if no custom value is provided when the component is included.

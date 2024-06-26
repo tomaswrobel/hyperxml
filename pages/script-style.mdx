@@ -1,0 +1,53 @@
+import {Callout} from "nextra/components";
+
+# Script & Style
+
+HyperXML allows you to include JavaScript and CSS in your documents using the `<script>{:html}` and 
+`<style>{:html}` tags. These tags can either reference external files through the `src` attribute or 
+contain inline content. This section provides examples and explanations for using these tags effectively.
+
+## Empty tag with `src` Attributes
+
+In HyperXML, you can use self-closing tags for empty `<script>{:html}` and `<style>{:html}` elements that reference external files.
+
+#### Script Tag with `src` Attribute
+
+```xml filename="hyperxml" copy
+<script src="script.js" />
+<style src="styles.css" />
+```
+
+These gets rendered as:
+
+```html filename="hyperxml" copy
+<script src="script.js"></script>
+<style>@import url(styles.css);</style>
+```
+
+<Callout type="warning">
+    Stylesheets are imported using `@import url(...){:css}`, which may affect performance. However, 
+    this method allows you to include stylesheets in both the `<head>{:html}` and `<body>{:html}` sections.
+</Callout>
+
+### Inline Content in Script and Style Tags
+
+In addition to referencing external files, you can also include 
+inline JavaScript and CSS content directly within the `<script>{:html}` and `<style>{:html}` tags.
+
+#### Inline JavaScript
+
+**Example**:
+```html filename="hyperxml" copy
+<script>
+    console.log('Hello, world!');
+</script>
+<style>
+    body {
+        background-color: lightblue;
+    }
+</style>
+```
+
+<Callout type="info">
+    This works the same way as in HTML. HyperXML leaves these untouched.
+</Callout>

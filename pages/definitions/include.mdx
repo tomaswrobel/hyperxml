@@ -1,0 +1,45 @@
+# `<include>{:html}` tag
+
+The `<include>{:html}` tag is used to insert a previously defined component into your document. 
+You can also pass parameters to customize the included content.
+
+```xml filename="hyperxml" copy
+<include definition="componentName">
+    <parameter name="paramName">Custom Content</parameter>
+</include>
+```
+
+## Simple Include
+
+```xml filename="hyperxml" copy
+<body>
+    <include definition="header" />
+</body>
+```
+
+This includes the previously defined "header" component within the body of the document, 
+inserting the `<div>{:html}` with the `<h1>{:html}` tag into this location.
+
+## Include with Parameter
+
+```xml filename="hyperxml" copy
+<body>
+    <include definition="header">
+        <parameter name="title">Custom Title</parameter>
+    </include>
+</body>
+```
+
+This includes the "header" component, overriding the default "title" parameter with the 
+custom value "Custom Title". As a result, the `<h1>{:html}` tag will display "Custom Title".
+
+## Include with Default Parameter
+
+```xml filename="hyperxml" copy
+<body>
+    <include definition="header" />
+</body>
+```
+
+This includes the "header" component without providing a custom value for the 
+"title" parameter. Therefore, the default value "Default Title" will be used.

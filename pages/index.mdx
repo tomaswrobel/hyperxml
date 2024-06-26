@@ -1,11 +1,70 @@
-# Introduction
- 
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+import {Callout} from "nextra/components";
 
-## What is Nextra?
+# HyperXML Documentation
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+## Introduction
 
-## Documentation
+**HyperXML** is a versatile markup language that combines the structure of XML with the familiarity of HTML. Designed to 
+seamlessly integrate with existing web technologies, HyperXML provides additional features and conveniences for developers.
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+### Key Features
+
+1. **HTML Compatibility**: HyperXML uses and translates directly into HTML, ensuring compatibility with all browsers.
+2. **XML Syntax**: HyperXML files use the `.xml` extension and adhere to XML syntax rules.
+3. **Enhanced Capabilities**:
+    - **Head Attribute for Title**: Simplifies title declaration by allowing it as an attribute within the `<head>{:html}` tag.
+    - **Reusable Definitions**: Define reusable components with `<definition name="...">{:html}`, and include them using `<include definition="..." />{:xml}`.
+    - **Self-Closing Tags**: Shorten empty elements using self-closing tags (e.g., `<div />{:xml}` instead of `<div></div>{:html}`).
+    - **External Stylesheets**: Use `<style src="..." />{:xml}` to include CSS stylesheets in both the `<head>{:html}` and `<body>{:html}`.
+
+### Example
+
+Here is a complete example of a HyperXML document:
+
+```xml filename="hyperxml.xml" copy
+<!DOCTYPE hyperxml>
+<?xml-stylesheet href="https://hyperxml.vercel.app/v1.xsl" type="text/xsl"?>
+<hyperxml>
+    <head title="Example">
+        <style src="styles.css" />
+    </head>
+    <body>
+        <h1>Example</h1>
+        <p>This is an example of a HyperXML document.</p>
+
+        <definition name="header">
+            <div class="header">
+                <h1><parameter name="title">Default Title</parameter></h1>
+            </div>
+        </definition>
+
+        <include definition="header">
+            <parameter name="title">Custom Title</parameter>
+        </include>
+
+        <include definition="header" />
+
+        <style src="body-styles.css" />
+
+        <p>Content continues here.</p>
+    </body>
+</hyperxml>
+```
+
+<Callout type="info">
+    We use `<?xml-stylesheet href="https://hyperxml.vercel.app/v1.xsl" type="text/xsl"?>{?:xml}` to include the XSLT 
+    stylesheet for transforming HyperXML into HTML. This is natively supported by all browsers. If you do not want 
+    to use Just-in-Time (JIT) compilation, you can precompile your HyperXML files [here](/compile).
+</Callout>
+
+In this example:
+- The document starts with `<!DOCTYPE hyperxml>{:xml}` to specify the document type.
+- The XSLT stylesheet is included with `<?xml-stylesheet href="https://hyperxml.vercel.app/v1.xsl" type="text/xsl"?>{:xml}`.
+- The `<head>{:html}` tag includes the title attribute and a reference to an external stylesheet.
+- A reusable `<definition>{:html}` for a header is created with a parameter for the title.
+- The header is included twice: once with a custom title and once with the default title.
+- An additional stylesheet is included within the `<body>{:html}`.
+
+<hr />
+
+By leveraging HyperXML, developers can write cleaner, more maintainable code while enjoying the benefits of both XML and HTML.

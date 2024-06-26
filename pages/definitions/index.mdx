@@ -1,0 +1,23 @@
+# Introduction to Definitions
+
+HyperXML provides powerful mechanisms for creating reusable components and injecting dynamic content through 
+its `<definition>{:html}`, `<include>{:html}`, and `<parameter>{:html}` tags. These features allow developers 
+to write more modular and maintainable code by defining reusable elements and including them with customizable parameters.
+
+## Compile-Time Note
+
+Definitions and includes in HyperXML are resolved during the compilation process. This 
+means the components and their content are processed before the final HTML is produced, 
+making them invisible to JavaScript and CSS at runtime. If you need dynamic content that 
+changes at runtime, use the HTML standard `<template>{:html}` and `<slot>{:html}` elements.
+
+```xml filename="runtime.xml" copy
+<template id="my-template">
+    <div class="content">
+        <slot name="slotName">Default Content</slot>
+    </div>
+</template>
+```
+This HTML example shows how to define a template with a slot that can be filled with 
+custom content at runtime. The `template` tag holds the structure, and the `slot` tag 
+provides a placeholder for dynamic content, with "Default Content" as the fallback.

@@ -1,0 +1,19 @@
+<!DOCTYPE hyperxml>
+<hyperxml lang="en">
+    <head title="Example" />
+    <body>
+        <h1>Example</h1>
+        <p>This is an example of a HyperXML document.</p>
+        <section>
+            <include definition="greeter">
+                <parameter name="name">World</parameter>
+            </include>
+            <include definition="greeter">
+                <parameter name="name">HyperXML</parameter>
+            </include>
+        </section>
+    </body>
+    <definition name="greeter">
+        <p>Hello, <parameter name="name" />!</p>
+    </definition>
+</hyperxml>
