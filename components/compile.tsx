@@ -15,7 +15,7 @@ function editor(code: string) {
     return highlight.highlight(code, {language: "xml", ignoreIllegals: true}).value;
 }
 
-const Compile: FunctionComponent = () => {
+const Compile = () => {
     const [xml, setXml] = useState(Example);
 
     const html = useMemo(async function () {
