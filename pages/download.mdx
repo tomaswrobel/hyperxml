@@ -1,8 +1,49 @@
-# Source
+import {Button} from "nextra/components";
+import {Bleed} from "nextra-theme-docs";
+import license from "../LICENSE?type=raw";
 
-Here you can see the magic. Simple, isn't it?
+# Download
 
-```xml filename="v1.xsl" copy showLineNumbers
+<abbr title="Extensible Stylesheet Language Transformations">XSLT</abbr> is a language for transforming XML documents
+into other formats, such as HTML, plain text, or another XML document. It uses template rules to match elements in the
+XML document and transform them according to specified patterns. HyperXML leverages XSLT to convert HyperXML documents
+into standard HTML. By including an XSLT stylesheet reference, HyperXML documents can be dynamically transformed into
+HTML by the browser or an XSLT processor, enabling seamless integration and rendering of HyperXML content as standard
+web pages.
+
+To write a file using HyperXML with a local XSLT stylesheet, first [download](#source) the HyperXML
+XSLT file save it as `hyperxml.xsl` in your project directory. Then, you can create a .xml file and reference
+this local stylesheet to enable the transformation of your HyperXML content into HTML. Here is an
+example of how to structure your HyperXML file:
+
+```xml filename="example.xml" copy
+<!DOCTYPE hyperxml>
+<?xml-stylesheet href="hyperxml.xsl" type="text/xsl"?>
+<hyperxml>
+    <head title="Local Stylesheet Example" />
+    <body>
+        <h1>Welcome to HyperXML</h1>
+        <p>This document uses a local XSLT stylesheet for transformation.</p>
+    </body>
+</hyperxml>
+```
+
+## License
+
+<br />
+<pre>{license}</pre>
+
+## Source
+
+<br />
+<Button type="button">
+	<a href="/v1.xsl" download="hyperxml.xsl">
+		Download XSL
+	</a>
+</Button>
+<br />
+
+```xml filename="hyperxml.xsl" copy showLineNumbers
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
@@ -18,7 +59,7 @@ Here you can see the magic. Simple, isn't it?
         </html>
     </xsl:template>
 
-    <!-- 
+    <!--
         HyperXML makes the head easier to work with.
 
         1. title can be set as an attribute of head, or not set at all.
