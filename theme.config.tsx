@@ -9,12 +9,12 @@ const config: DocsThemeConfig = {
 		</div>
 	),
 	project: {
-		link: 'https://github.com/tomas-wrobel/hyperxml',
+		link: 'https://github.com/tomaswrobel/hyperxml',
 	},
 	chat: {
-		link: 'https://discord.com',
+		link: 'https://discordapp.com/users/tomaswrobel',
 	},
-	docsRepositoryBase: 'https://github.com/tomas-wrobel/hyperxml',
+	docsRepositoryBase: 'https://github.com/tomaswrobel/hyperxml',
 	useNextSeoProps: () => ({
 		titleTemplate: '%s | HyperXML',
 		defaultTitle: 'HyperXML',
@@ -28,7 +28,7 @@ const config: DocsThemeConfig = {
 	footer: {
 		text: (
 			<>
-				&copy; 2024 Tomáš Wróbel. Under the&nbsp;<a href="https://opensource.org/licenses/MIT">MIT License</a>.
+				&copy; 2024 <a href="https://tomaswrobel.dev">Tomáš Wróbel</a>. Under the&nbsp;<a href="https://opensource.org/licenses/MIT">MIT License</a>. hyperxml@tomaswrobel.dev
 			</>
 		)
 	}
